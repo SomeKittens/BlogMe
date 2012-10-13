@@ -1,4 +1,4 @@
-==BlogMe==
+#BlogMe
 
 This is a Chrome Extension designed to help keep track of all the blog articles you want to read.
 
@@ -6,14 +6,14 @@ This is a Chrome Extension designed to help keep track of all the blog articles 
 "Load Blog" will load one of your saved pages.  It's random, so hey, information!
 
 
-=TODO=
-*Short Term*
--Record read blogs
--Create blog categories
--Allow user to manage saved blogs
+##TODO
+###Short Term
+* Record read blogs
+* Create blog categories
+* Allow user to manage saved blogs
 
-*Medium Term*
--Parse RSS feeds (for archival reading/automatically adding new posts)
+###Medium Term
+* Parse RSS feeds (for archival reading/automatically adding new posts)
 
-*Long Term*
--Store blogs in cloud
+###Long Term
+* Store blogs in cloud
