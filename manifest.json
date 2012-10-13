@@ -1,0 +1,10 @@
+{
+	"name": "BlogMe",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Keeps track of a user's blog habit",
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"permissions": []
+}
