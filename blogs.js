@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	setel.addEventListener("click", addNew);
 	//If blogs isn't initalized, do so.
 	//There's got to be a better way to do this
-	//if(localStorage.blogs === undefined) {
+	if(localStorage.blogs === undefined) {
 		localStorage.blogs = "[]";
-	//}
+	}
 });
 
 //Records the current tab in localStorage
@@ -47,5 +47,4 @@ function load() {
 		);			
 	});
 	localStorage.blogs = JSON.stringify(blogArray);
-	return false;
 }
