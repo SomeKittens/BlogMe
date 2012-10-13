@@ -1,10 +1,10 @@
 //Adds the listeners to the HTML
 //Is there some way I could just do onClick()?
 document.addEventListener("DOMContentLoaded", function () {
-	var el = document.getElementById("get")
-	el.addEventListener("click", addNew);
-	var el = document.getElementById("set")
-	el.addEventListener("click", loadOld);
+	var getel = document.getElementById("new");
+	getel.addEventListener("click", addNew);
+	var setel = document.getElementById("save");
+	setel.addEventListener("click", loadOld);
 });
 
 function addNew() {
@@ -16,5 +16,9 @@ function addNew() {
 		var tab = tabArray[0];
 		localStorage.blogs.push(tab.url);
 		console.log(localStorage.blogs);
-	}
+	});
+}
+
+function loadOld() {
+	return false;
 }
