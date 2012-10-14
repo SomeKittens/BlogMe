@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	getel.addEventListener("click", load);
 	var setel = document.getElementById("save");
 	setel.addEventListener("click", addNew);
-	//If blogs isn't initalized, do so.
-	//There's got to be a better way to do this
-	if(localStorage.blogs === undefined) {
+	//If localStorage vars aren't initalized, do so.
+	if(!localStorage.blogs) {
 		localStorage.blogs = "[]";
+	}
+	if(!localStorage.read) {
+		localStorage.read = "[]";
 	}
 });
 
@@ -32,7 +34,6 @@ function load() {
 	var blogArray = JSON.parse(localStorage.blogs);
 	//Pop random item from the array
 	var blogUrl = blogArray.splice(~~(Math.random() * blogArray.length), 1)[0];
-	console.log("blogUrl = " + blogUrl);
 	//Get the current tab
 	chrome.tabs.query({
 		active: true,
@@ -42,9 +43,13 @@ function load() {
 		var tab = tabArray[0];
 		//Set current tab to url
 		chrome.tabs.update(
-			tab.id, 
+			tab.id,
 			{"url" : blogUrl}
-		);			
+		);
+		//Add url to read list
+		var readArray = JSON.parse(localStorage.read);
+		readArray.push(blogUrl);
+		localStorage.read = JSON.stringify(readArray);
 	});
 	localStorage.blogs = JSON.stringify(blogArray);
 }
